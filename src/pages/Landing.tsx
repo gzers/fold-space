@@ -20,12 +20,14 @@ const Landing: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center p-6 relative bg-[var(--color-void-bg)] text-white overflow-hidden">
+    <div
+      className="flex flex-col items-center justify-center min-h-screen text-center p-6 relative text-white overflow-hidden bg-[var(--color-void-bg)] bg-[url('/backgrounds/landing-bg.png')] bg-cover bg-center bg-no-repeat"
+    >
       <div className="z-10 max-w-2xl">
         <h1 className="text-5xl font-bold mb-6 tracking-tight">褶宇宙 Fold-Space</h1>
         <p className="text-xl text-gray-300 mb-12">把你的生命时刻折叠进可触摸的时空褶皱里。</p>
         
-        <div className="space-y-6 bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md mb-12 text-left">
+        <div className="space-y-6 bg-black/45 p-8 rounded-2xl border border-white/12 backdrop-blur-md mb-12 text-left shadow-[0_0_40px_rgba(0,0,0,0.28)]">
           <h2 className="text-2xl font-semibold mb-4">需要以下权限以获得完整体验</h2>
           <div className="flex flex-col space-y-6">
             <div className="flex items-start gap-4">
@@ -67,11 +69,6 @@ const Landing: React.FC = () => {
             跳过手势，使用鼠标/触控进入
           </button>
         </div>
-      </div>
-      
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-emotion-low)]/20 rounded-full blur-[120px]"></div>
       </div>
     </div>
   );

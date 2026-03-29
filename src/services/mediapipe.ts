@@ -1,6 +1,6 @@
 import { FilesetResolver, GestureRecognizer } from '@mediapipe/tasks-vision';
 
-export type GestureType = 'Open_Palm' | 'Closed_Fist' | 'Pinching' | 'None';
+export type GestureType = 'Open_Palm' | 'Closed_Fist' | 'Thumb_Down' | 'Pinching' | 'None';
 
 export class GestureService {
   private recognizer: GestureRecognizer | null = null;
@@ -38,23 +38,19 @@ export class GestureService {
       const result = this.recognizer.recognizeForVideo(videoElement, timestamp);
       if (result.gestures && result.gestures.length > 0) {
         const gestureName = result.gestures[0][0].categoryName;
-        // Map common gestures
         let mappedGesture: GestureType = 'None';
+
         if (gestureName === 'Open_Palm') mappedGesture = 'Open_Palm';
         else if (gestureName === 'Closed_Fist') mappedGesture = 'Closed_Fist';
-        // Pinching is usually Pinch or sometimes we need to check distance between index and thumb manually, 
-        // but let's assume it detects "Pinch" or we map "None" for now.
-        // Wait, MediaPipe default model returns: None, Closed_Fist, Open_Palm, Pointing_Up, Thumb_Down, Thumb_Up, Victory, ILoveYou
-        // It doesn't have "Pinching" out of the box unless we train it or use logic on landmarks.
-        // Let's rely on landmarks for pinching if needed.
-        
+        else if (gestureName === 'Thumb_Down') mappedGesture = 'Thumb_Down';
+
         return {
           gesture: mappedGesture,
-          landmarks: result.landmarks[0] || []
+          landmarks: result.landmarks[0] || [],
         };
       }
       return null;
-    } catch (e) {
+    } catch {
       return null;
     }
   }
