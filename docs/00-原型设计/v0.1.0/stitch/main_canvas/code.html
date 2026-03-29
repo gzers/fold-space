@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fold-Space | The Celestial Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@200;300;400;500;600&amp;family=JetBrains+Mono:wght@300;400;500&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#e4e1ed",
+              "on-primary-container": "#ffdacf",
+              "on-primary-fixed-variant": "#832600",
+              "outline": "#948f9a",
+              "on-primary-fixed": "#390c00",
+              "surface-tint": "#ffb59d",
+              "surface-variant": "#34343d",
+              "error-container": "#93000a",
+              "on-secondary-fixed": "#201047",
+              "primary-fixed-dim": "#ffb59d",
+              "secondary": "#cfbdfe",
+              "on-error-container": "#ffdad6",
+              "surface-container-low": "#1b1b23",
+              "on-tertiary-fixed-variant": "#434465",
+              "error": "#ffb4ab",
+              "primary": "#ffb59d",
+              "surface-container-highest": "#34343d",
+              "on-error": "#690005",
+              "tertiary-fixed": "#e1e0ff",
+              "on-secondary-container": "#beabeb",
+              "tertiary-fixed-dim": "#c3c3eb",
+              "on-surface": "#e4e1ed",
+              "surface-dim": "#13131b",
+              "on-secondary": "#36275d",
+              "surface-bright": "#393842",
+              "background": "#13131b",
+              "primary-container": "#b63900",
+              "inverse-on-surface": "#302f39",
+              "surface": "#13131b",
+              "inverse-primary": "#ab3500",
+              "secondary-container": "#4d3d75",
+              "tertiary-container": "#606184",
+              "on-surface-variant": "#cac4d0",
+              "on-tertiary": "#2c2d4d",
+              "tertiary": "#c3c3eb",
+              "on-tertiary-container": "#e0dfff",
+              "on-tertiary-fixed": "#171837",
+              "surface-container": "#1f1f27",
+              "on-secondary-fixed-variant": "#4d3d75",
+              "inverse-surface": "#e4e1ed",
+              "primary-fixed": "#ffdbd0",
+              "outline-variant": "#49454f",
+              "surface-container-high": "#292932",
+              "secondary-fixed-dim": "#cfbdfe",
+              "surface-container-lowest": "#0d0d16",
+              "secondary-fixed": "#e9ddff",
+              "on-primary": "#5d1900"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Plus Jakarta Sans"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .nebula-bg {
+            background: radial-gradient(circle at 20% 30%, rgba(255, 181, 157, 0.05) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(207, 189, 254, 0.05) 0%, transparent 40%),
+                        #13131b;
+        }
+        .glass-card {
+            background: rgba(31, 31, 39, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .wormhole-search:focus-within {
+            width: 320px;
+            background: rgba(255, 181, 157, 0.1);
+        }
+        .memory-link {
+            background: linear-gradient(90deg, transparent, rgba(255, 181, 157, 0.2), transparent);
+            height: 1px;
+            filter: blur(1px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body overflow-hidden nebula-bg min-h-screen">
+<!-- TopNavBar (JSON Mapping) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-[#13131b]/60 backdrop-blur-xl shadow-[0_0_40px_rgba(255,181,157,0.04)]">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-bold tracking-tighter text-[#ffb59d] font-headline">Fold-Space</span>
+<div class="flex items-center bg-surface-container-low/50 rounded-full px-4 py-2 border border-outline-variant/10 wormhole-search transition-all duration-500">
+<span class="material-symbols-outlined text-outline mr-2 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-mono w-48 placeholder:text-outline/50" placeholder="Search through memories..." type="text"/>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#ffb59d] border-b-2 border-[#ffb59d] pb-1 font-headline tracking-tight text-sm" href="#">Archives</a>
+<a class="text-[#cfbdfe]/70 hover:text-[#ffb59d] hover:bg-white/5 transition-all font-headline tracking-tight text-sm px-2 rounded" href="#">Universe</a>
+<a class="text-[#cfbdfe]/70 hover:text-[#ffb59d] hover:bg-white/5 transition-all font-headline tracking-tight text-sm px-2 rounded" href="#">Nexus</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 px-4 py-1.5 bg-surface-container-high/40 rounded-full border border-outline-variant/10">
+<span class="text-[10px] font-mono uppercase tracking-[0.2em] text-outline">View:</span>
+<div class="flex gap-4">
+<button class="text-primary text-xs font-headline font-bold">Timeline</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors text-xs font-headline">Nebula</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors text-xs font-headline">Network</button>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors" data-icon="help">help</span>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors" data-icon="settings">settings</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/20">
+<img alt="User Celestial Profile" class="w-full h-full object-cover" data-alt="Abstract artistic portrait of a person merged with celestial elements and cosmic dust in deep purple and orange tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGU0XLHsuDg46E2KW81Zh9LSq2hgroUxG8GQo4Gz8BWXsZktEHm4NKR8zwzqEEeSxmcAP1ehdvAqFNjkv0AKF_qXa1pCzZtJXeM0Keauu4eMsDMXLIgEHdihz-2AJElmYNYVkNV9efAwbLf3g2uAs5ohdsRLonwaKCWzNsejFmZ0Gnoxf2Lym7NAi8030RUS7he8yspXC2aCj-gKsO06XdCCePaQJa8d2ouEpz3As2iBDgHyTKbLLL-FInYq9i0FyTdN-nz7cRLg"/>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar (JSON Mapping) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col items-center py-24 z-40 bg-[#13131b]/40 backdrop-blur-2xl w-20 rounded-r-[1.5rem] border-r border-outline-variant/5">
+<div class="flex flex-col items-center gap-8 h-full">
+<div class="flex flex-col items-center gap-1 group cursor-pointer">
+<div class="bg-[#ffb59d]/20 text-[#ffb59d] rounded-xl p-3 transition-transform duration-500 ease-out">
+<span class="material-symbols-outlined" data-icon="access_time">access_time</span>
+</div>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-primary">Timeline</span>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer">
+<div class="text-[#c3c3eb]/50 p-3 hover:bg-[#cfbdfe]/10 hover:text-[#cfbdfe] transition-all rounded-xl">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#c3c3eb]/50">Eons</span>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer">
+<div class="text-[#c3c3eb]/50 p-3 hover:bg-[#cfbdfe]/10 hover:text-[#cfbdfe] transition-all rounded-xl">
+<span class="material-symbols-outlined" data-icon="grain">grain</span>
+</div>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#c3c3eb]/50">Moments</span>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer">
+<div class="text-[#c3c3eb]/50 p-3 hover:bg-[#cfbdfe]/10 hover:text-[#cfbdfe] transition-all rounded-xl">
+<span class="material-symbols-outlined" data-icon="Hub">hub</span>
+</div>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#c3c3eb]/50">Astral</span>
+</div>
+<div class="mt-auto group cursor-pointer flex flex-col items-center gap-1">
+<div class="text-[#c3c3eb]/50 p-3 hover:bg-error/10 hover:text-error transition-all rounded-xl">
+<span class="material-symbols-outlined" data-icon="delete_forever">delete_forever</span>
+</div>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#c3c3eb]/50">Void</span>
+</div>
+</div>
+</aside>
+<!-- Main Canvas Area -->
+<main class="relative w-screen h-screen pt-24 pl-24 pr-8 pb-32">
+<!-- Connection Lines Layer (SVG Decorative) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30">
+<line stroke="#ffb59d" stroke-dasharray="4 4" stroke-width="0.5" x1="30%" x2="50%" y1="40%" y2="35%"></line>
+<line stroke="#cfbdfe" stroke-dasharray="4 4" stroke-width="0.5" x1="50%" x2="70%" y1="35%" y2="55%"></line>
+<line stroke="#ffb59d" stroke-dasharray="4 4" stroke-width="0.5" x1="30%" x2="25%" y1="40%" y2="65%"></line>
+</svg>
+<!-- Floating Camera Preview (Top Right) -->
+<div class="fixed top-24 right-8 z-30 glass-card rounded-2xl p-2 w-48 shadow-2xl border-primary/10">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black/40">
+<img alt="System Camera Feed" class="w-full h-full object-cover grayscale opacity-60" data-alt="Grainy, high-contrast security camera feed of a quiet modern office interior in soft teal and shadow tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwWVbIG1aLWlOcGJzC3notKqfrk-mUSn4pCZPazSVgAxgjEkqu3xIhzAJFTS0tpnsOYQHQJrNAmbuFSEGXE6gUjcTwS9v0KQhafxJUu13h-gd0aAMe0oo1DFGNekP-dginUlEDlz_EZ3oZHJY0t8f7D-VewcIAEJIBjaRpZNxsNMq91JArTiw3f3Nz3LvxuewsksVJeqCRB9xKiZO0Fe7mi1VV47cDsjJW-easNLO-6c0w_5PF5mCaba9m0xoc8jeb_-L2onn8eg"/>
+<div class="absolute top-2 left-2 flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
+<span class="text-[8px] font-mono text-green-500 uppercase tracking-tighter">System Ready</span>
+</div>
+</div>
+</div>
+<!-- Memory Cards Canvas -->
+<div class="relative w-full h-full">
+<!-- Card 1: Orange/Primary -->
+<div class="absolute left-[15%] top-[15%] w-72 glass-card rounded-2xl p-5 shadow-2xl transition-transform duration-500 hover:scale-[1.02] cursor-move">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-mono text-primary bg-primary/10 px-2 py-0.5 rounded-full">Archive ID: 8821</span>
+<span class="material-symbols-outlined text-sm text-outline">more_horiz</span>
+</div>
+<h3 class="font-headline text-lg font-bold mb-2 text-primary tracking-tight">Summer Solstice 2024</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed line-clamp-3">The warmth of the solar winds hitting the atmosphere. We stood on the edge of the crater watching the dust settle into patterns.</p>
+<div class="mt-6 flex items-center gap-3">
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-primary shadow-[0_0_10px_rgba(255,181,157,0.4)]"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">75%</span>
+</div>
+</div>
+<!-- Card 2: Purple/Secondary -->
+<div class="absolute left-[45%] top-[10%] w-80 glass-card rounded-2xl p-5 shadow-2xl transition-transform duration-500 hover:scale-[1.02] cursor-move">
+<div class="w-full h-32 rounded-xl mb-4 overflow-hidden">
+<img alt="Memory Visual" class="w-full h-full object-cover" data-alt="Deep space nebula with swirling purple and pink cosmic clouds and bright distant stars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFZqn0humWZeN0jUO-gyjOJ5BXPqjH58sFW-czBLIWKPHvLzqLlW6306uNBc4NHd6ZqYR066pLb8ikU-_hS67YI5TH3JxyLxmzYCoJsRkSnez-e_bxhk4W4swkvKS3rtIpWjYUbLM_1c8BTsnprdv2PwgO9SGUOSIcQ_azlNOw3cceTIS5xVSw5zginz6D9WXyzfb4YDFy9Gc5TeXd4fSCQDA9mhxWws7ZiHYhBkWc_MQpyDyOa68jJg5qsAuCkFaIVYp2AVxmmA"/>
+</div>
+<h3 class="font-headline text-lg font-bold mb-1 text-secondary tracking-tight">The Neural Bridge</h3>
+<p class="text-[11px] font-mono text-outline mb-3">TIMESTAMP: 00:42:19_Z</p>
+<p class="text-xs text-on-surface-variant italic">"Everything is connected by the same gravity that pulls us apart."</p>
+<div class="mt-4 flex gap-2">
+<span class="px-2 py-1 bg-secondary/10 rounded text-[9px] text-secondary font-mono">NEURAL</span>
+<span class="px-2 py-1 bg-secondary/10 rounded text-[9px] text-secondary font-mono">CONNECTION</span>
+</div>
+</div>
+<!-- Card 3: Deep Blue/Tertiary -->
+<div class="absolute left-[65%] top-[45%] w-64 glass-card rounded-2xl p-5 shadow-2xl transition-transform duration-500 hover:scale-[1.02] cursor-move">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-tertiary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">waves</span>
+</div>
+<div>
+<h4 class="font-headline text-sm font-bold text-tertiary">Silent Echo</h4>
+<p class="text-[9px] font-mono text-outline uppercase tracking-wider">Atmospheric Data</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] font-mono">
+<span class="text-outline">Pressure</span>
+<span class="text-tertiary">101.4 kPa</span>
+</div>
+<div class="flex justify-between text-[10px] font-mono">
+<span class="text-outline">Clarity</span>
+<span class="text-tertiary">Absolute Zero</span>
+</div>
+</div>
+</div>
+<!-- Card 4: White/Neutral -->
+<div class="absolute left-[20%] top-[60%] w-72 glass-card rounded-2xl p-5 shadow-2xl transition-transform duration-500 hover:scale-[1.02] cursor-move">
+<div class="border-l-2 border-on-surface/20 pl-4 py-2">
+<p class="text-sm font-body text-on-surface italic">"Memory is the only thing that keeps the universe from expanding forever until we are all alone."</p>
+<p class="text-[10px] font-mono text-outline mt-3">— FRAGMENT_LOG_72</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Right: Singularity Trash Bin -->
+<div class="fixed right-8 bottom-32 flex flex-col items-center gap-3">
+<div class="w-16 h-16 rounded-full glass-card flex items-center justify-center shadow-[0_0_30px_rgba(207,189,254,0.15)] group cursor-pointer border-secondary/20 relative">
+<div class="absolute inset-0 rounded-full bg-secondary/5 blur-xl group-hover:bg-secondary/20 transition-all duration-700"></div>
+<span class="material-symbols-outlined text-secondary text-2xl relative z-10 transition-transform duration-500 group-hover:rotate-45" data-icon="blur_on">blur_on</span>
+</div>
+<span class="text-[9px] font-mono text-secondary/50 uppercase tracking-[0.3em]">Singularity</span>
+</div>
+<!-- Bottom Timeline -->
+<footer class="fixed bottom-0 left-0 w-full z-50 px-8 py-6 pointer-events-none">
+<div class="max-w-5xl mx-auto glass-card rounded-2xl p-4 flex items-center gap-8 pointer-events-auto border-outline-variant/5">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="timeline">timeline</span>
+<span class="text-[10px] font-mono text-outline uppercase tracking-widest whitespace-nowrap">Archive Status: Encrypted</span>
+</div>
+<div class="flex-1 h-px bg-outline-variant/20 relative">
+<!-- Dot Markers -->
+<div class="absolute -top-1 left-[10%] w-2 h-2 rounded-full bg-primary/40 cursor-pointer hover:bg-primary transition-colors"></div>
+<div class="absolute -top-1 left-[25%] w-2 h-2 rounded-full bg-on-surface/20 cursor-pointer hover:bg-primary transition-colors"></div>
+<div class="absolute -top-1 left-[40%] w-2 h-2 rounded-full bg-secondary/40 cursor-pointer hover:bg-primary transition-colors"></div>
+<div class="absolute -top-1 left-[55%] w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(255,181,157,0.8)] cursor-pointer"></div>
+<div class="absolute -top-1 left-[70%] w-2 h-2 rounded-full bg-on-surface/20 cursor-pointer hover:bg-primary transition-colors"></div>
+<div class="absolute -top-1 left-[85%] w-2 h-2 rounded-full bg-on-surface/20 cursor-pointer hover:bg-primary transition-colors"></div>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right">
+<p class="text-[10px] font-mono text-primary leading-none">CURRENT EPOCH</p>
+<p class="text-xs font-headline font-bold text-on-surface">2024.08.12</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_0_15px_rgba(255,181,157,0.3)] hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+</div>
+</footer>
+</body></html>

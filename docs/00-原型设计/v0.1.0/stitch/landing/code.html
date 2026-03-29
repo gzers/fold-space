@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>褶宇宙 | Fold-Space - 每一片记忆，都是宇宙的褶皱</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@200;300;400;500;600&amp;family=JetBrains+Mono:wght@300;400&amp;family=Plus+Jakarta+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#cfbdfe",
+                        "primary-fixed": "#ffdbd0",
+                        "inverse-on-surface": "#302f39",
+                        "tertiary-container": "#606184",
+                        "surface-variant": "#34343d",
+                        "surface-tint": "#ffb59d",
+                        "inverse-surface": "#e4e1ed",
+                        "primary": "#ffb59d",
+                        "surface-container": "#1f1f27",
+                        "surface-container-high": "#292932",
+                        "surface-container-low": "#1b1b23",
+                        "surface-container-lowest": "#0d0d16",
+                        "on-primary-fixed-variant": "#832600",
+                        "on-surface-variant": "#cac4d0",
+                        "tertiary-fixed-dim": "#c3c3eb",
+                        "primary-container": "#b63900",
+                        "on-background": "#e4e1ed",
+                        "surface-bright": "#393842",
+                        "on-primary-fixed": "#390c00",
+                        "on-secondary-fixed": "#201047",
+                        "on-tertiary": "#2c2d4d",
+                        "on-tertiary-container": "#e0dfff",
+                        "tertiary-fixed": "#e1e0ff",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#34343d",
+                        "secondary-fixed": "#e9ddff",
+                        "primary-fixed-dim": "#ffb59d",
+                        "secondary-container": "#4d3d75",
+                        "outline-variant": "#49454f",
+                        "on-secondary-fixed-variant": "#4d3d75",
+                        "outline": "#948f9a",
+                        "on-tertiary-fixed-variant": "#434465",
+                        "surface-dim": "#13131b",
+                        "inverse-primary": "#ab3500",
+                        "surface": "#13131b",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#beabeb",
+                        "on-error-container": "#ffdad6",
+                        "background": "#13131b",
+                        "tertiary": "#c3c3eb",
+                        "on-tertiary-fixed": "#171837",
+                        "on-surface": "#e4e1ed",
+                        "on-primary": "#5d1900",
+                        "secondary-fixed-dim": "#cfbdfe",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#ffdacf",
+                        "on-secondary": "#36275d"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk", "PingFang SC"],
+                        "body": ["Manrope", "PingFang SC"],
+                        "label": ["Plus Jakarta Sans"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #0d0d16;
+            color: #e4e1ed;
+            overflow: hidden;
+        }
+        .cosmic-bg {
+            background: radial-gradient(circle at 50% 50%, #1a1b3a 0%, #0d0d16 100%);
+        }
+        .nebula-glow {
+            position: fixed;
+            width: 80vw;
+            height: 80vh;
+            background: radial-gradient(circle at center, rgba(107, 91, 149, 0.1) 0%, transparent 70%);
+            filter: blur(80px);
+            z-index: -1;
+        }
+        .starfield {
+            background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+                              radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                              radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.3;
+        }
+        .pulsing-glow {
+            box-shadow: 0 0 20px rgba(255, 181, 157, 0.2);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary/30">
+<!-- Background Layers -->
+<div class="fixed inset-0 cosmic-bg z-[-10]"></div>
+<div class="fixed inset-0 starfield z-[-9]"></div>
+<div class="nebula-glow top-[-10%] left-[-10%]"></div>
+<div class="nebula-glow bottom-[-10%] right-[-10%] opacity-50" style="background: radial-gradient(circle at center, rgba(255, 107, 53, 0.05) 0%, transparent 70%);"></div>
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-slate-950/40 backdrop-blur-2xl">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-slate-50 font-headline">
+                褶宇宙 | Fold-Space
+            </div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-orange-200 font-semibold border-b-2 border-orange-200/50 pb-1 font-['Space_Grotesk'] tracking-tight" href="#">Archive</a>
+<a class="text-slate-400 font-medium hover:text-slate-200 transition-all duration-500 font-['Space_Grotesk'] tracking-tight" href="#">Ethereal</a>
+<a class="text-slate-400 font-medium hover:text-slate-200 transition-all duration-500 font-['Space_Grotesk'] tracking-tight" href="#">Privacy</a>
+<a class="text-slate-400 font-medium hover:text-slate-200 transition-all duration-500 font-['Space_Grotesk'] tracking-tight" href="#">Connect</a>
+</div>
+<button class="px-6 py-2 rounded-full border border-primary/20 bg-white/5 backdrop-blur-md text-orange-200 hover:bg-white/10 transition-all duration-300 active:scale-95 opacity-80">
+                开启我的宇宙之旅
+            </button>
+</div>
+<div class="h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+<!-- Hero Section -->
+<div class="text-center space-y-8 z-10">
+<div class="space-y-2">
+<h1 class="text-7xl md:text-9xl font-headline font-bold text-white tracking-widest drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                    褶宇宙
+                </h1>
+<p class="text-2xl md:text-3xl font-headline font-light tracking-[0.5em] text-on-surface-variant/80 uppercase">
+                    Fold-Space
+                </p>
+</div>
+<p class="text-lg md:text-xl font-light tracking-[0.2em] text-secondary opacity-90 max-w-2xl mx-auto">
+                每一片记忆，都是宇宙的褶皱
+            </p>
+</div>
+<!-- Gesture Guides & CTA Section -->
+<div class="mt-24 w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 items-center gap-12 z-10">
+<!-- Left Guide -->
+<div class="order-2 md:order-1 flex flex-col gap-6 md:items-end">
+<div class="group p-5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-primary/30 transition-all duration-500 w-full md:w-64">
+<div class="flex items-center gap-4 md:flex-row-reverse">
+<span class="text-3xl filter grayscale group-hover:grayscale-0 transition-all">✋</span>
+<div class="md:text-right">
+<h3 class="text-on-surface font-medium">展开</h3>
+<p class="text-sm text-on-surface-variant">唤醒新记忆</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Central CTA -->
+<div class="order-1 md:order-2 flex flex-col items-center gap-8">
+<button class="group relative px-12 py-6 rounded-2xl bg-white/5 backdrop-blur-2xl border border-white/20 pulsing-glow hover:bg-white/10 transition-all duration-700 active:scale-95">
+<div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="relative text-2xl font-medium tracking-widest text-white">开启我的宇宙之旅</span>
+</button>
+<button class="text-on-surface-variant hover:text-white transition-colors text-sm font-mono tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">mouse</span>
+                    或点击鼠标/触控进入
+                </button>
+</div>
+<!-- Right Guide -->
+<div class="order-3 flex flex-col gap-6">
+<div class="group p-5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-primary/30 transition-all duration-500 w-full md:w-64">
+<div class="flex items-center gap-4">
+<span class="text-3xl filter grayscale group-hover:grayscale-0 transition-all">🤏</span>
+<div>
+<h3 class="text-on-surface font-medium">捏合</h3>
+<p class="text-sm text-on-surface-variant">穿梭时空</p>
+</div>
+</div>
+</div>
+<div class="group p-5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-error/30 transition-all duration-500 w-full md:w-64">
+<div class="flex items-center gap-4">
+<span class="text-3xl filter grayscale group-hover:grayscale-0 transition-all">✊</span>
+<div>
+<h3 class="text-on-surface font-medium">握拳</h3>
+<p class="text-sm text-on-surface-variant">归于奇点</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Decorative Element -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none opacity-20">
+<img alt="Cosmic nebula with folded light structures" class="w-full h-full object-contain mix-blend-screen animate-pulse" data-alt="abstract cosmic nebula with iridescent gas clouds and folded ribbons of light against a deep star-filled dark space background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrHBemjAQwUEAC7AdK_sTDU_GmZUZxEbD63iiOmR6CmNUCu3d43NepmliowqsJMenS0QOB5qZoEX0VN8XKn7bJqGPq97GYelTQdESoPHIpGbMBzL1YQc4n7a83jUbew1m4qcxyw3MdWT4gSfRsayodnaH98vudUz86LKE_gO7Ikaj57CwerhZBUeY0cPoFIZiwrdvugT3TQ09WEb1ngL4jVPEwlZUpPTOUdFjyeQ0d8zLaWf43eyHBzIgyAxfmYm7U7Jfdm4jH4g"/>
+</div>
+</main>
+<!-- Footer Status Bar -->
+<footer class="fixed bottom-0 left-0 w-full z-50 bg-slate-950/60 backdrop-blur-3xl border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-4 gap-4">
+<!-- Privacy Note -->
+<div class="flex items-center gap-3 text-slate-500 font-mono text-[10px] tracking-[0.2em] uppercase">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">lock</span>
+                🔒 数据仅在本地保存，不上传服务器
+            </div>
+<!-- Status Badges -->
+<div class="flex items-center gap-8">
+<div class="text-orange-200 flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    📷 摄像头已就绪
+                </div>
+<div class="text-orange-200 flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    📁 本地存储已连接
+                </div>
+<div class="text-slate-600 flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] uppercase">
+                    Fold-Space © Celestial Archive. Encrypted &amp; Decentralized.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>
