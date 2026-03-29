@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void-bg: #0a0a12;
+  --color-void-grid: rgba(255, 255, 255, 0.03);
+
+  --color-fold-glass: rgba(255, 255, 255, 0.1);
+  --color-fold-border: rgba(255, 255, 255, 0.18);
+  --color-fold-glow: rgba(255, 255, 255, 0.08);
+
+  --color-emotion-calm: #1a1b3a;
+  --color-emotion-warm: #ff6b35;
+  --color-emotion-neutral: #f0f0f0;
+  --color-emotion-low: #6b5b95;
+
+  --color-alert-lock: #ff3333;
+  --color-success-restore: #00d084;
+  --color-ghost-hand: rgba(100, 255, 150, 0.3);
+}
+
+:root {
+  --void-bg: #0a0a12;
+  --void-grid: rgba(255, 255, 255, 0.03);
+
+  --fold-glass: rgba(255, 255, 255, 0.1);
+  --fold-border: rgba(255, 255, 255, 0.18);
+  --fold-glow: rgba(255, 255, 255, 0.08);
+
+  --emotion-calm: #1a1b3a;
+  --emotion-warm: #ff6b35;
+  --emotion-neutral: #f0f0f0;
+  --emotion-low: #6b5b95;
+
+  --alert-lock: #ff3333;
+  --success-restore: #00d084;
+  --ghost-hand: rgba(100, 255, 150, 0.3);
+}
+
+body {
+  margin: 0;
+  background-color: var(--void-bg);
+  color: white;
+  font-family: "PingFang SC", "Inter", sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
